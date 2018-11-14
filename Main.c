@@ -1,9 +1,7 @@
-#include"SeqList.h"
+#include "List.h"
 
 int main(){
+
 	Test();
-	//Test2();
-	system("pause");
 	return 0;
-	
 }
