@@ -1,0 +1,87 @@
+mysql -h -u -p
+
+mysql 的一般创表方法
+CREATE DATABASE HELLOWORLD;
+USE HELLOWORLD;
+CREATE TABLE students(
+	id int,
+	name varchar(20),
+	gender varchar(20)
+);
+
+INSERT INTO students(id,name,gender)
+VALUES(1,'钢铁侠','男'),
+             (1,'钢铁侠','男'),
+             (1,'钢铁侠','男');
+--查看警告
+SHOW WARNINGS;
+
+help 指令可以查看操作使用
+
+SHOW VARIABLES LIKE '%char%'；
+
+SHOW VARIABLES LIKE '%collation%'
+--查看建库规则
+show create database helloworld;
+
+ALTER DATABASE [DB_NAME];
+
+--删除库
+DROP DATABASE IF EXISTS helloworld;
+
+--数据备份和恢复
+shell 下执行  mysqldump -uroot -p [db_name]
+利用重定向 '>' 将数据内容放到一个文件中
+恢复的时候在创建一个新的库，将之前文件中的内容和sql语句重新重定向到创建的库中
+
+查看用户登录
+show processlist\G
+
+1.了解数据库是做什么的
+2.熟悉操作环境
+3.字符集编码有一个基本概念   GBK/GBK2312/GB18030(windows上主要用，中文两个char)
+			utf-8 一般情况下都用这个编码，linux主要用中文变长，一般三个char
+4.库的操作（如上）
+
+数据类型：1)数值 2）文本+二进制 3）日期时间 
+
+字面量 不加引号     是数值
+            加引号	文本/日期时间
+
+创建‘学生’库
+CREATE TABLE student（
+	id int,
+	name varchar(20),
+	gender varchar(20)
+);
+
+--查看数据表
+DESC student；
+
+创建一个class引擎 是MyISAM
+CREATE TABLE student（
+	id int,
+	name varchar(20),
+	gender varchar(20)
+)ENGINE MyISAM;
+
+修改表结构，增加班级id字段
+ALTER TABLE sudent ADD class_id int;
+修改表结构，删除gender字段
+ALTER TABLE sudent DROP gender;
+修改表结构，增加gender字段
+ALTER TABLE sudent ADD gender AFTER name;
+修改表结构，更改name类型，
+ALTER TABLE sudent MODIFY name VARCHAR(100);只可改大更改数据后可能将不能改为小
+
+ALTER TABLE sudent CHANGE gender sex varchar(20); 
+
+表改名
+RENAME TABLE old_name to new_name;
+
+特殊字段用法，默认时间戳
+timestamp default current_timestamp
+
+查找上一个获取的id（特殊函数），但是批量插入多条，只返回插入中第一条的id数据
+select last_insert_id()
+
