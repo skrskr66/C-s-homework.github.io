@@ -45,7 +45,7 @@ lyc@skrskr~    当前用户名@当前主机名   ~:当前用户的家目录
 
 rm 	默认删除文件
 	-f 强制删除文件
-	-r 递归删除，要求确认
+	-r 递归删除，要求确认/
 cp	拷贝文件到指定位置
 	默认是拷贝普通文件
 	-r  拷贝所有文件包含目录型文件
@@ -90,7 +90,26 @@ tail	显示文件的后n行内容，默认为十行。
 其他操作命令：
 	时间操作：查看日历cal  -j按一年中的第几天来显示 -y全年日历 bc计算器
 	data表示时间 data +%s 时间戳
-	
 
+file 查看文件的信息
+	
+yum 包管理器
+rzsz linux与windows的文件互相拖拽
+ping 查看当前网络连接
 umask 查看/设置文件的创建权限掩码
-		
+
+vim 神之编辑器  emacs 编辑器之神
+
+gdb调试器中，gcc [filename] -o [editname] -g 进入调试模式
+break打断点	del删除端点	run让程序运行
+continue（c）让程序继续执行
+print（p）查看变量内容
+list（l）查看当前执行到的语句的附近的代码
+next（n）一条一条查看代码
+bt backstack查看当前的调用栈
+
+段错误：内存访问出错
+吐核：吐出了一个“核心转储文件”	core dump文件
+ulimit -a
+
+gdb：打断点+运行+继续+打印+bt
