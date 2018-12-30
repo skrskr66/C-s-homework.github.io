@@ -86,3 +86,5 @@ timestamp default current_timestamp
 select last_insert_id()
 
 持续更新。。。
+
+学习没有捷径，思想总要在路上，就是我真的有点累了
