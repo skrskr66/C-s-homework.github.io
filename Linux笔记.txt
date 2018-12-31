@@ -115,3 +115,5 @@ ulimit -a
 gdb：打断点+运行+继续+打印+bt
 
 推荐一个vimforcpp插件，挺好用的
+
+加油！
