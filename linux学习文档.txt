@@ -1,9 +1,0 @@
-192.168.147.131 linux ip地址
-vimtutor vim学习教程
-
-ctrl + z 后台状态，fg重新进入
-
-dd删除后 是相当于剪切
-p往后粘贴 P往前粘贴
-
-c cw ce cd c$ 都可以操作
